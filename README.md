@@ -39,7 +39,5 @@ Download dataset [Prostate](https://drive.google.com/file/d/1sx2FpNySQNjU6_zBa4D
 Download dataset [ISIC2018](https://challenge.isic-archive.com/data/#2018) and [PH2](https://www.fc.up.pt/addi/ph2%20database.html). (Following [ESP-MedSAM](https://github.com/xq141839/ESP-MedSAM)).
 
 ## Contact Information
-My personal website: https://orange-czh.github.io/
-
 Email: chengzihan@sjtu.edu.cn or czh@smail.nju.edu.cn, each one is OK.
 
