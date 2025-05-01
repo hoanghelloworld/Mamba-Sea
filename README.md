@@ -2,7 +2,7 @@
 **Mamba-Sea: A Mamba-based Framework with Global-to-Local Sequence Augmentation for Generalizable Medical Image Segmentation**
 
 Mamba-Sea has been accepted by IEEE TMI on April 23, 2025.
-【[Paper](https://arxiv.org/abs/2504.17515)】
+【[Paper](https://doi.org/10.1109/TMI.2025.3564765)】
 
 ## Kind Tips
 The core part of Mamba-Sea's code is in [Network1](https://github.com/orange-czh/Mamba-Sea/blob/main/model/vmunet.py) and [Network2](https://github.com/orange-czh/Mamba-Sea/blob/main/model/vmamba.py).By using these two files as a backbone, you can easily incorporate our code into your tasks. The complete part of our code will soon be released by May 2025.
