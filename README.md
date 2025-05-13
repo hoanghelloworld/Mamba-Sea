@@ -1,7 +1,7 @@
 # Mamba-Sea
 **Mamba-Sea: A Mamba-based Framework with Global-to-Local Sequence Augmentation for Generalizable Medical Image Segmentation**
 
-Mamba-Sea has been accepted by IEEE TMI on April 23, 2025.
+Mamba-Sea has been accepted by IEEE TMI.
 【[Paper](https://doi.org/10.1109/TMI.2025.3564765)】
 
 ## Kind Tips
