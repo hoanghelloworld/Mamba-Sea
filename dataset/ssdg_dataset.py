@@ -12,13 +12,9 @@ from torchvision import transforms as T
 from typing_extensions import Literal, TypedDict
 
 from .base_dataset import BaseDataset
-from .covid import Covid
 from .fundus import Fundus
-from .mnms import MNMS
 #from .mnms import get_all_data_folder as get_mnms_domains
 from .prostate import Prostate
-from .prostate_new import Prostate_new
-from .scgm import SCGM
 from .skin import skin
 from .scgm import get_all_data_folder as get_scgm_domains
 from .style_sampler import RandomStyleSampler, StyleSampler
@@ -33,11 +29,9 @@ class StrongAugConfig(TypedDict):
 
 
 dataset_zoo: dict[str, type[BaseDataset]] = {
-    "covid": Covid,
     "fundus": Fundus,
     "mnms": MNMS,
-    "scgm": SCGM,
-    "prostate": Prostate_new,
+    "prostate": Prostate,
     "skin":skin,
 }
 default_style_mode: Literal["hist"] = "hist"
