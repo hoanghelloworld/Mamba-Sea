@@ -15,8 +15,8 @@ from .base_dataset import BaseDataset
 from .fundus import Fundus
 #from .mnms import get_all_data_folder as get_mnms_domains
 from .prostate import Prostate
-from .skin import skin
-from .scgm import get_all_data_folder as get_scgm_domains
+#from .skin import skin
+#from .scgm import get_all_data_folder as get_scgm_domains
 from .style_sampler import RandomStyleSampler, StyleSampler
 from .transform import (amplitude_mixup, blur, hist_match, obtain_cutmix_box,
                         random_rot_flip, random_rotate)
@@ -30,9 +30,9 @@ class StrongAugConfig(TypedDict):
 
 dataset_zoo: dict[str, type[BaseDataset]] = {
     "fundus": Fundus,
-    "mnms": MNMS,
+    #"mnms": MNMS,
     "prostate": Prostate,
-    "skin":skin,
+    #"skin":skin,
 }
 default_style_mode: Literal["hist"] = "hist"
 default_strong = StrongAugConfig(
