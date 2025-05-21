@@ -147,10 +147,6 @@ def main():
     writer = SummaryWriter(args.save_path)
 
     for epoch in range(epoch + 1, cfg["epochs"]):
-        logger.info(
-            "===========> Epoch: {:}, LR: {:.5f}, Previous best: {:.2f}, Previous best enhance: {:.2f}".
-            format(epoch, optimizer.param_groups[0]["lr"], previous_best, previous_best_enhance))
-
         model.train()
         total_loss = AverageMeter()
         
@@ -249,30 +245,8 @@ def main():
         
         for i, dice in enumerate(dice_class_enhance):
             writer.add_scalar("eval_enhance/Class_%s_dice" % i, dice, epoch)
-
-        is_best = mean_dice > previous_best
-        is_best_enhance = mean_dice_enhance > previous_best_enhance
-        previous_best = max(mean_dice, previous_best)
-        previous_best_enhance = max(mean_dice_enhance, previous_best_enhance)
-        checkpoint = {
-            "model": model.state_dict(),
-            "optimizer": optimizer.state_dict(),
-            "epoch": epoch,
-            "previous_best": previous_best,
-        }
-
-        checkpoint_enhance = {
-            "model": model_enhance.state_dict(),
-            "optimizer": optimizer_enhance.state_dict(),
-            "epoch": epoch,
-            "previous_best": previous_best_enhance,
-        }
         torch.save(checkpoint, os.path.join(args.save_path, "latest.pth"))
         torch.save(checkpoint_enhance, os.path.join(args.save_path, "latest_enhance.pth"))
-        if is_best:
-            torch.save(checkpoint, os.path.join(args.save_path, "best.pth"))
-        if is_best_enhance:
-            torch.save(checkpoint_enhance, os.path.join(args.save_path, "best_enhance.pth"))
     writer.close()
     #尾巴注释处
 
