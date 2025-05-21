@@ -116,8 +116,6 @@ def main():
 
     n_iters = cfg["iters"]
     total_iters = n_iters * cfg["epochs"]
-    previous_best = 0.0
-    previous_best_enhance = 0.0
     epoch = -1
 
     if os.path.exists(os.path.join(args.save_path, "latest.pth")):
@@ -128,7 +126,6 @@ def main():
         optimizer.load_state_dict(checkpoint["optimizer"])
         optimizer_enhance.load_state_dict(checkpoint_enhance["optimizer"])
         epoch = checkpoint["epoch"]
-        previous_best = checkpoint["previous_best"]
 
         """if epoch >= cfg["epochs"] - 1:
             logger.info("************ Skip trained checkpoint at epoch %i\n" %
