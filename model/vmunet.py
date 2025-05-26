@@ -5,7 +5,7 @@ import random
 
 class GVA(nn.Module):
     def __init__(self, layers, channels, brightness_threshold=0.03):
-        super(EnhanceNetwork, self).__init__()
+        super(GVA, self).__init__()  # Changed from EnhanceNetwork to GVA
 
         self.brightness_threshold = brightness_threshold
 
